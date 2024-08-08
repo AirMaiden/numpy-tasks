@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 # Practical Task 3: Array Manipulation with Separate Output Function in NumPy
 import numpy as np
 
@@ -53,10 +47,3 @@ print_array(combined_array, "Combined array:")
 assert combined_array.shape == (3, 12), f"Expected shape (3, 12), but got {combined_array.shape}"
 
 assert np.array_equal(combined_array, reshaped_array), "Combined array does not match the reshaped array."
-
-
-# In[ ]:
-
-
-
-
