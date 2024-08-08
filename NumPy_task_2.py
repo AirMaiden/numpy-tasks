@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[90]:
-
-
 # Practical Task 2: Analyzing and Visualizing E-Commerce Transactions with NumPy
 import numpy as np
 import datetime
@@ -21,7 +15,6 @@ def create_transactions_data(rows):
 
     transactions = np.column_stack((transaction_ids, user_ids, product_ids, quantities, prices, timestamps))
     return transactions
-
 
 # 2. Data Analysis Functions
 def get_total_revenue(transactions):
@@ -52,7 +45,6 @@ def get_column_data_types(transactions):
             column_data_type = type(row)
         print(f"Column {col + 1} data type: {column_data_type.__name__}")
 
-
 # 3. Array Manipulation Functions
 def get_product_quantity_array(transactions):
     return np.column_stack((transactions[:,2], transactions[:,3]))
@@ -66,7 +58,6 @@ def mask_zero_quantity_transactions(transactions):
     expanded_mask = np.expand_dims(isZero, axis=1)
     masked_array = np.ma.masked_array(transactions, mask=np.repeat(expanded_mask, transactions.shape[1], axis=1))
     return masked_array
-
 
 # 4. Arithmetic and Comparison Functions
 def increase_prices(transactions, percentage_increase):
@@ -92,7 +83,6 @@ def compare_revenue(transactions, start_date1, end_date1, start_date2, end_date2
     revenue_period2 = get_total_revenue(transactions_period2)
     
     return revenue_period1, revenue_period2
-
 
 # 5. Indexing and Slicing Functions
 def get_transactions_for_specific_user(transactions, user_id):
@@ -120,7 +110,6 @@ def top_products_by_revenue(transactions, top_n=5):
     top_product_ids = unique_product_ids[top_indices]
     
     return transactions[np.isin(product_ids, top_product_ids)]
-
 
 # 6. Output Function
 def print_array(array,message=''):
@@ -177,16 +166,3 @@ print_array(get_transactions_for_specific_user(transactions_sample,user),"All tr
 
 print_array(slice_transactions_by_date_range(transactions_sample,start_date2,end_date2),"Transactions for date range " + start_date2 + " - " + end_date2 + ":")
 print_array(top_products_by_revenue(transactions_sample),"Transactions of the top 5 products by revenue:")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
