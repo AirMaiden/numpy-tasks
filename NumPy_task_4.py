@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 # Practical Task 4: Comprehensive Data Handling and Analysis with NumPy
 import numpy as np
 import os
@@ -81,10 +75,3 @@ row_wise_sum = axis_based_sum(array, axis=1)
 col_wise_sum = axis_based_sum(array, axis=0)
 print_array(row_wise_sum, "Row-wise sum:")
 print_array(col_wise_sum, "Column-wise sum:")
-
-
-# In[ ]:
-
-
-
-
